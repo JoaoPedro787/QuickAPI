@@ -41,9 +41,9 @@ const updateUserController = async (req,res,next) => {
 };
 
 const deleteUserController = async (req,res,next) => {
-    const {email} = req.params;
+    const {id} = req.params;
 
-    const {error} = await to(deleteUser(email));
+    const {error} = await to(deleteUser(id));
 
     if (error){
         return next(new NotFound('Error when deleting user.'));

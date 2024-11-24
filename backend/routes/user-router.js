@@ -8,6 +8,6 @@ const { NewUserController, getAllUsersController,updateUserController,deleteUser
 router.post('/', UserMiddleWare, NewUserController);
 router.get('/', getAllUsersController);
 router.put('/:email',updateUserController);
-router.delete('/:email',deleteUserController);
+router.delete('/:id',deleteUserController);
 
 module.exports = router;

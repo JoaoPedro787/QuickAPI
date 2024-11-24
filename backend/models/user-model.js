@@ -52,13 +52,13 @@ const updateUser = async (email, password) => {
     return result;
 };
 
-const deleteUser = async (email) => {
+const deleteUser = async (id) => {
     const [result] = await connection.execute(
         `DELETE 
         FROM users 
-        WHERE email = ?
+        WHERE id = ?
         `,
-        [email]
+        [id]
     );
 
     if (result.affectedRows === 0) {
